@@ -1,7 +1,7 @@
 # ESP8266-IRC-Client
 ESP8266 IRC Client with BME280, PCF8591, IR Temp Sensors that respond to triggers from IRC channels
 
-Uses Arduino IRCClient.h
+Uses ArduinoIRC library: IRCClient.h
 
 Edit WIFI settings to match your network
 
