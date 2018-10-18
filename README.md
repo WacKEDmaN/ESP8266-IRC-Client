@@ -11,7 +11,7 @@ Edit REPLY_TO to match your IRC Nick, else you wont be able to join a channel
 
 Edit Channels to match the IRC channels to join
 
- use '/msg botnick !join' once the bot has connected to IRC to join channels, it will only join if your IRC nick matches REPLY_TO (botnick is case sensitive!
+ use '/msg botnick !join' once the bot has connected to IRC to join channels, it will only join if your IRC nick matches REPLY_TO (botnick is case sensitive!)
  
 once its joined the channels you can send '!help' for a list of available commands (sends to PM)
 
