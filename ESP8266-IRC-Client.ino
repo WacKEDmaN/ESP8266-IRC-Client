@@ -20,16 +20,16 @@ static const TempUnit SCALE=CELSIUS;  // Options are CELSIUS, FAHRENHEIT
 IRTemp irTemp(PIN_ACQUIRE, PIN_CLOCK, PIN_DATA);
 
 // Wifi settings
-#define ssid         "XXXX"   
+#define ssid         "XXXX"   // Edit These!
 #define password     "XXXX"
 
 // IRC settings
-#define IRC_SERVER   "irc.efnet.org"
+#define IRC_SERVER   "irc.efnet.org"  // Edit These!
 #define IRC_PORT     6667
 #define IRC_NICKNAME "ESPBot5000"
 #define IRC_USER     "ESPBot5000"
 
-#define REPLY_TO     "XXXX" // Reply only to this nick
+#define REPLY_TO     "XXXX" // Reply only to this nick.. Edit This!
 
 WiFiClient wiFiClient;
 IRCClient client(IRC_SERVER, IRC_PORT, wiFiClient);
@@ -223,6 +223,7 @@ void callback(IRCMessage ircMessage) {
       client.sendMessage(ircMessage.nick, "ESP Commands:");
       client.sendMessage(ircMessage.nick, "!ledon :turn on onboard LED");
       client.sendMessage(ircMessage.nick, "!ledoff :turn off onboard LED");
+      client.sendMessage(ircMessage.nick, "!ledblink : blinks onboard LED 120 times");
       client.sendMessage(ircMessage.nick, "!getvcc :shows ESP8266 voltage");
       client.sendMessage(ircMessage.nick, "!getfreeheap :shows ESP8266 free heap memory");
       client.sendMessage(ircMessage.nick, "!getcycles :shows ESP8266 cpu instruction cycle count since start as an unsigned 32-bit");
