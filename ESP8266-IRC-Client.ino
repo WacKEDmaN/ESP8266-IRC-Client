@@ -3,7 +3,6 @@
 #include <Wire.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
-#include <Ticker.h>
 #include "IRTemp.h"
 
 extern "C" {
@@ -45,9 +44,6 @@ byte value0, value1, value2, value3;
 Adafruit_BME280 bme; // I2C
 
 ADC_MODE(ADC_VCC);
-
-Ticker flipper;
-int count = 0;
 
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
@@ -118,10 +114,6 @@ void callback(IRCMessage ircMessage) {
   if (ircMessage.text == "!ledoff") {
       digitalWrite(LED_BUILTIN, HIGH);    
       client.sendMessage(ircMessage.parameters, "ESP8266 Onboard LED: OFF");   
-  }
-  if (ircMessage.text == "!ledblink") {
-      flipper.attach(0.3, flip);    
-      client.sendMessage(ircMessage.parameters, "ESP8266 Onboard LED: Blinking!");   
   }
   if (ircMessage.text == "!getvcc") {
       float vccd = ESP.getVcc();
@@ -223,7 +215,6 @@ void callback(IRCMessage ircMessage) {
       client.sendMessage(ircMessage.nick, "ESP Commands:");
       client.sendMessage(ircMessage.nick, "!ledon :turn on onboard LED");
       client.sendMessage(ircMessage.nick, "!ledoff :turn off onboard LED");
-      client.sendMessage(ircMessage.nick, "!ledblink : blinks onboard LED 120 times");
       client.sendMessage(ircMessage.nick, "!getvcc :shows ESP8266 voltage");
       client.sendMessage(ircMessage.nick, "!getfreeheap :shows ESP8266 free heap memory");
       client.sendMessage(ircMessage.nick, "!getcycles :shows ESP8266 cpu instruction cycle count since start as an unsigned 32-bit");
@@ -258,17 +249,4 @@ void debugSentCallback(String data) {
   Serial.println(data);
 }
 
-void flip() {
-  int state = digitalRead(LED_BUILTIN);  // get the current state of GPIO1 pin
-  digitalWrite(LED_BUILTIN, !state);     // set pin to the opposite state
 
-  ++count;
-  // when the counter reaches a certain value, start blinking like crazy
-  if (count == 20) {
-    flipper.attach(0.1, flip);
-  }
-  // when the counter reaches yet another value, stop blinking
-  else if (count == 120) {
-    flipper.detach();
-  }
-}
