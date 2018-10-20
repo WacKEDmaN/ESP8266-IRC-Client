@@ -2,30 +2,30 @@
 die();  only compile for ESP8266!  (overkill?! hey look no comments!!)
 #endif 
 extern "C" {
-#include "user_interface.h" //ESP8266 Specific!
+#include "user_interface.h" //ESP8266 SDK access!
 }
 #include <ESP8266WiFi.h>  // required
 #include <IRCClient.h>    // required
-#include <Wire.h> // use for I2C sensors
+#include <Wire.h> //  for I2C sensors
 
 // Wifi settings
-#define ssid         "XXXX"   // Edit
-#define password     "XXXX"
+#define ssid         "MyRouter"   
+#define password     "austin1024"
 
 // IRC settings
-#define IRC_SERVER   "irc.XXXX.net"  // Edit
+#define IRC_SERVER   "irc.3phasegaming.net"
 #define IRC_PORT     6667
-#define IRC_NICKNAME "ESPBotXXX"     // Edit
-#define IRC_USER     "ESPBotXXX"
-#define REPLY_TO     "XXXX" // Reply only to this nick  // Edit
+#define IRC_NICKNAME "ESPBot"
+#define IRC_USER     "ESPBot"
+#define REPLY_TO     "Brocky" // Reply only to this nick
 WiFiClient wiFiClient;
 IRCClient client(IRC_SERVER, IRC_PORT, wiFiClient);
 
 ADC_MODE(ADC_VCC);  // set nodemcu ADC Mode to read board voltage 
 
 #define USE_IRTemp    // comment out if you dont have a IRTemp sensor (not i2c)
-                            // Edit
-#define USE_BME280    // comment out if you dont have a i2c BME280 connected  
+
+#define USE_BME280    // comment out if you dont have a i2c BME280 connected
 #define USE_PCF8591   // comment out if you dont have a i2c PCF8591 connected
 #define USE_LCD       // comment out if you dont have a i2c LCD connected
 
@@ -144,8 +144,8 @@ void callback(IRCMessage ircMessage) {
   if (ircMessage.nick == REPLY_TO  && ircMessage.parameters == IRC_NICKNAME  && ircMessage.text == "!join") { 
       //client.sendMessage(ircMessage.nick, "Hi " + ircMessage.nick + "! I'm your IRC bot.");
       //client.sendMessage(ircMessage.nick, "joining channels...");
-      client.sendRaw("JOIN #XXXX");  // Channel to join (include #)          // Edit Channels here!
-      client.sendRaw("JOIN #ESPBot"); 
+      client.sendRaw("JOIN #offtopic");  // Channel to join (include #)
+      client.sendRaw("JOIN #speedsims"); 
       #ifdef USE_LCD
       lcd.clear();
       lcd.setCursor(0, 0);
