@@ -4,8 +4,7 @@
 Search sketch for "XXXX" lines for quick startup!<br>
 Added ability to remove individual sensors .. comment out #ifdef USE_XXXX lines<br> 
 Added 16x2 LCD on I2C<br>
-Thanks to Andreas Spiess for the preprocessor tips!<br>
-https://www.youtube.com/watch?v=1eL8dXL3Wow
+Thanks to Andreas Spiess for the preprocessor tips! https://www.youtube.com/watch?v=1eL8dXL3Wow
 
 ### V1.0 ESP8266-IRC-Client.ino
 ESP8266 IRC Client with BME280, PCF8591, IR Temp Sensors that respond to triggers from IRC channels<br>
