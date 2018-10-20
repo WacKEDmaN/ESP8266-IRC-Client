@@ -6,7 +6,7 @@ extern "C" {
 }
 #include <ESP8266WiFi.h>  // required
 #include <IRCClient.h>    // required
-@include <Wire.h> // use for I2C sensors
+#include <Wire.h> // use for I2C sensors
 
 // Wifi settings
 #define ssid         "XXXX"   // Edit
