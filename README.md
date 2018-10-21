@@ -18,7 +18,7 @@ once its joined the channels you can send '!help' for a list of available comman
 
 ## Pinouts
 
-Device   |ESP8266 Pins     |Device Pins 
+Device   |NodeMCU Pins     |Device Pins 
 ---------|-----------------|-------------------
 18x2 LCD | D1(SCL),D2(SDA) | (SCL),(SDA)
 BME280   | D1(SCL),D2(SDA) | (SCL),(SDA)
