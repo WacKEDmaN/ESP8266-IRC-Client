@@ -1,6 +1,6 @@
 # ESP8266-IRC-Client
 
-### V1.1 ESP8266-IRC-Client-LCD.ino
+### V1.1 ESP8266-IRC-Client-v1-2.ino
 Search sketch for "XXXX" lines for quick startup!<br>
 Added ability to remove individual sensors .. comment out #ifdef USE_XXXX lines<br> 
 Added 16x2 LCD on I2C<br>
