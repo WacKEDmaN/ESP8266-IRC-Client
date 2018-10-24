@@ -4,7 +4,7 @@
 New config section at top of script<br>
 Added NTP<br>
 Added !uptime command (!localtime !gmttime and !unixtime comming soon!)<br> 
-Added auto join IRC Channels (triggers via line send from server currently set for end of motd)<br>
+Added auto join IRC Channels (triggers via line sent from server currently set for end of motd)<br>
 Added custom LCD characters<br>
 LCD now displays live BME280 (if defined!) Time and voltage data, IRC Triggers show for 5 seconds before returning to the "live" page..<br>
 10hr Live stream of it in action... https://www.youtube.com/watch?v=Qyn5Yd8giZI (not much activity sorry we're all idle whores!)<br>
