@@ -1,5 +1,15 @@
 # ESP8266-IRC-Client
 
+### V1.1 ESP8266-IRC-Client-v1-3.ino
+New config section at top of script<br>
+Added NTP
+Added !uptime command
+Added auto join IRC Channels (triggers via line send from server currently set for end of motd)
+Added custom LCD characters
+LCD now displays live BME280 data (if defined!) and Time, IRC Triggers show for 5 seconds before returning to the "live" page..
+10hr Live stream of it in action... https://www.youtube.com/watch?v=Qyn5Yd8giZI (not much activity sorry we're all idle whores!)
+
+
 ### V1.1 ESP8266-IRC-Client-v1-2.ino
 Search sketch for "XXXX" lines for quick startup!<br>
 Added ability to remove individual sensors .. comment out #ifdef USE_XXXX lines<br> 
