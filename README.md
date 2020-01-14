@@ -17,7 +17,7 @@ Thanks to Andreas Spiess for the preprocessor tips! https://www.youtube.com/watc
 
 ### V1.0 ESP8266-IRC-Client.ino
 ESP8266 IRC Client with BME280, PCF8591, IR Temp Sensors that respond to triggers from IRC channels<br>
-Uses ArduinoIRC library: IRCClient.h<br>
+Uses ArduinoIRC library: IRCClient.h https://github.com/fredimachado/ArduinoIRC <br>
 Edit WIFI settings to match your network<br>
 Edit IRC settings to match your irc server, port, bot nick, and bot user<br>
 Edit REPLY_TO to match your IRC Nick, else you wont be able to join a channel<br>
